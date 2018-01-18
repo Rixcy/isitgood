@@ -1,0 +1,8 @@
+<% content_for :namespace do %>
+  <div id="main-page">
+    <%= render 'layouts/navbar' %>
+
+    <%= yield %>
+  </div>
+<% end %>
+<%= render template: 'layouts/application' %>

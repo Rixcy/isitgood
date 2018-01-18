@@ -1,0 +1,14 @@
+<%= flash_messages %>
+
+<div class="row">
+  <div class="col-sm-9">
+    <% if @movies.exists? %>
+      <%= render @movies %>
+    <% else %>
+      <h5>Woops, there are no movies yet!</h5>
+    <% end %>
+  </div>
+  <div class="col-sm-3">
+    <%= render 'sidebar' %>
+  </div>
+</div>

@@ -10,11 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree ./global
  *= require_self
+ *= require_tree ./global
  */
 
+ @import "global/global";
+ @import "global/home_navbar";
+ @import "global/masthead";
+ @import "global/bootstrap-overrides";
+
  @import "bootstrap";
- @import "select2";
- @import "select2-bootstrap";
  @import "font-awesome";

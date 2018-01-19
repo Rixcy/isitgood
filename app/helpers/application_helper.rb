@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def flash_messages
-    render "shared/flashes"
-  end
-
   def active?(controller_action_hash_or_array_or_string)
     controller = params[:controller]
     action = params[:action]

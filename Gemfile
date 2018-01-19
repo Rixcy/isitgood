@@ -19,7 +19,7 @@ gem 'will_paginate-bootstrap'
 gem 'popper_js'
 
 # auth
-gem 'bcrypt'
+gem 'devise'
 
 # backend
 gem 'paperclip'

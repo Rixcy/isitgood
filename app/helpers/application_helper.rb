@@ -20,7 +20,25 @@ module ApplicationHelper
     "active" if controller_action_hash.key?(controller) && controller_action_hash[controller].include?(action)
   end
 
-  def logged_in?
-    session[:user_id]
+  def bootstrap_class_for(flash_type)
+    {
+      success: "alert-success",
+      error: "alert-error",
+      alert: "alert-danger",
+      notice: "alert-info"
+    }[flash_type.to_sym] || flash_type.to_s
+  end
+
+  def bootstrap_flash_icons(flash_type)
+    {
+      success: "fa-check",
+      error: "fa-exclamation-circle",
+      alert: "fa-exclamation-triangle",
+      notice: "fa-info-circle"
+    }[flash_type.to_sym] || 'fa-bullseye'
+  end
+
+  def flash_messages
+    render "shared/flashes"
   end
 end

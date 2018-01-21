@@ -11,6 +11,9 @@
             <span class="nav-link">Logged in as <%= current_user.forename %> <%= current_user.surname %></span>
           </li>
           <li class="nav-item">
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
         <% else %>

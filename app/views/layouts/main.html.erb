@@ -3,6 +3,7 @@
 
   <div style="margin-top: calc(65px + 2rem)">
     <div class="container">
+      <%= flash_messages unless flash.empty? %>
       <%= yield %>
     </div>
   </div>

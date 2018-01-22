@@ -10,7 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         :website,
         :bio,
         :dob,
-        :email
+        :email,
+        :user_group_id,
       )
       change_password = false
     end
@@ -41,7 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         :dob,
         :email,
         :password,
-        :password_confirmation
+        :password_confirmation,
       )
     end
 
@@ -55,7 +56,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         :email,
         :password,
         :password_confirmation,
-        :current_password
+        :current_password,
+        :user_group_id,
       )
     end
 end

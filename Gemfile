@@ -17,6 +17,7 @@ gem 'momentjs-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'popper_js'
+gem 'rails-assets-select2', source: 'https://rails-assets.org'
 
 # auth
 gem 'devise'

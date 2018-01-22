@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.9)
       actionpack (= 4.2.9)
@@ -138,6 +139,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.9)
       sprockets-rails
+    rails-assets-select2 (4.0.5)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.9)
@@ -228,6 +230,7 @@ DEPENDENCIES
   paperclip
   popper_js
   rails (= 4.2.9)
+  rails-assets-select2!
   redcarpet
   rubocop
   sass-rails (~> 5.0)

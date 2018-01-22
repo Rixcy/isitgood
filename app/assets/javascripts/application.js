@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require popper
+//= require select2
 //= require bootstrap
 //= require moment
 //= require_tree .

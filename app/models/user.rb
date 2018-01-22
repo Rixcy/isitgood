@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :forename
   validates_presence_of :surname
+
+  belongs_to :user_group
 end

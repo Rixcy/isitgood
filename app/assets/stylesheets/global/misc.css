@@ -29,6 +29,7 @@ body {
 .avatar {
   border-radius: 50%;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .s160.avatar {
@@ -37,5 +38,23 @@ body {
 }
 
 hr {
-  overflow: hidden;
+  overflow: hidden !important;
+}
+
+.form-group .form-control, .selection > span.select2-selection {
+  background-color: #fafbfc;
+}
+
+.selection > span.select2-selection {
+  border: 1px solid #ced4da;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+@media (max-width: 500px) {
+  .avatar-options {
+    float: left;
+  }
 }

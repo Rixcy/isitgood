@@ -17,13 +17,15 @@
           <img class="avatar s160" src="http://via.placeholder.com/160x160" />
         <% end %>
       </div>
-      <h5>Upload new avatar</h5>
-      <button class="btn btn-sm btn-primary btn-disabled">Browse file...</button>
-      <div class="help-block">
-        The maximum file size allowed is 200KB.
-      </div>
-      <hr>
-      <button class="btn btn-sm btn-primary btn-disabled">Remove Avatar</button>
+      <span class="avatar-options">
+        <h5>Upload new avatar</h5>
+        <button class="btn btn-sm btn-primary btn-disabled">Browse file...</button>
+        <div class="help-block">
+          The maximum file size allowed is 200KB.
+        </div>
+        <hr>
+        <button class="btn btn-sm btn-primary btn-disabled">Remove Avatar</button>
+      </span>
     </div>
   </div>
   <hr>
@@ -56,7 +58,9 @@
       <div class="form-group">
         <%= f.label :user_groups, "User Groups" %>
         <%= f.collection_select :user_group_ids, UserGroup.all, :id, :name,
-          {}, class: 'form-control', multiple: true %>
+          {}, class: 'form-control', multiple: true, disabled: (
+            true unless current_user.user_groups.exists?(UserGroup.find_by(name: 'Admin'))
+          ) %>
       </div>
 
       <div class="form-group">
@@ -101,12 +105,12 @@
     <div class="card border-dark mb-3">
       <div class="card-header bg-dark text-white">Unhappy?</div>
       <div class="card-body text-dark">
-        <h5 class="card-title">Cancel my account</h5>
+        <h5 class="card-title">Delete my account</h5>
         <p class="card-text">
-          Not happy with the service? Cancel your account using the button below or click <a href="#">here</a> to leave us a message.<br>
+          Not happy with the service? Delete your account using the button below or click <a href="#">here</a> to leave us a message.<br>
           <strong>WARNING: This cannot be undone.</strong>
         </p>
-        <%= link_to "Cancel my account",
+        <%= link_to "Delete my account",
           registration_path(resource_name),
           class: [:btn, 'btn-danger'],
           data: { confirm: "Are you sure?" },

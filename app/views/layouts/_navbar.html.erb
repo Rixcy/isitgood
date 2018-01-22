@@ -10,6 +10,11 @@
           <li class="nav-item">
             <span class="nav-link">Logged in as <%= current_user.forename %> <%= current_user.surname %></span>
           </li>
+          <% if admin?(current_user) %>
+            <li class="nav-item">
+              <%= link_to 'Admin', admin_users_path, class: 'nav-link' %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %>
           </li>

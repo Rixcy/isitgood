@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>Forename</th>
+        <th>Surname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.forename %></td>
+          <td><%= u.surname %></td>
+          <td><%= u.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

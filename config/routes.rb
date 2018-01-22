@@ -19,4 +19,8 @@ Rails.application.routes.draw do
 
   get 'home', to: 'static_pages#index'
   root 'static_pages#index'
+
+  namespace :admin do
+    resources :users
+  end
 end

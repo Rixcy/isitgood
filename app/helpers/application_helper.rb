@@ -46,4 +46,8 @@ module ApplicationHelper
     gravatar = Digest::MD5::hexdigest(email).downcase
     url = "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
   end
+
+  def admin?(current_user)
+    return true if current_user.user_group == UserGroup.find_by(name: 'Admin')
+  end
 end

@@ -56,11 +56,9 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :user_groups, "User Groups" %>
-        <%= f.collection_select :user_group_ids, UserGroup.all, :id, :name,
-          {}, class: 'form-control', multiple: true, disabled: (
-            true unless current_user.user_groups.exists?(UserGroup.find_by(name: 'Admin'))
-          ) %>
+        <%= f.label :user_group %>
+        <%= f.collection_select :user_group_id, UserGroup.all, :id, :name,
+          {}, class: 'form-control input-lg', disabled: (true unless admin?(current_user)) %>
       </div>
 
       <div class="form-group">

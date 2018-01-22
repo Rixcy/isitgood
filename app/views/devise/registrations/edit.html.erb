@@ -1,6 +1,5 @@
 <h2>
   Edit <%= resource_name.to_s.humanize %>
-  <%= link_to "Back", :back, class: [:btn, 'btn-primary', 'pull-right-not-xs'] %>
 </h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -12,7 +11,11 @@
     </div>
     <div class="col-lg-8">
       <div class="clearfix avatar-image">
-        <img class="avatar s160" src="http://via.placeholder.com/160x160" />
+        <% if resource.email.present? %>
+          <%= image_tag gravatar_url(resource.email, 160), class: 'avatar' %>
+        <% else %>
+          <img class="avatar s160" src="http://via.placeholder.com/160x160" />
+        <% end %>
       </div>
       <h5>Upload new avatar</h5>
       <button class="btn btn-sm btn-primary btn-disabled">Browse file...</button>

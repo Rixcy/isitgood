@@ -139,6 +139,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.9)
       sprockets-rails
+    rails-assets-matchHeight (0.7.2)
     rails-assets-select2 (4.0.5)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -230,6 +231,7 @@ DEPENDENCIES
   paperclip
   popper_js
   rails (= 4.2.9)
+  rails-assets-matchHeight!
   rails-assets-select2!
   redcarpet
   rubocop

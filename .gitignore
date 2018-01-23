@@ -8,3 +8,4 @@
 config/secrets.yml
 config/database.yml
 vendor/cache
+public/system/*

@@ -15,4 +15,5 @@
 //= require select2
 //= require bootstrap
 //= require moment
+//= require matchHeight
 //= require_tree .

@@ -7,4 +7,6 @@ $(function() {
   $('.copy-footer').append(year);
 
   applySelect2();
+
+  $('.match-height').matchHeight();
 });

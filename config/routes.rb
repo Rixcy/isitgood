@@ -11,10 +11,10 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
 
-  resources :movies
+  resource :rating, only: :index
 
   authenticated :user do
-    root 'movies#index', as: :authenticated_root
+    root 'ratings#index', as: :authenticated_root
   end
 
   get 'home', to: 'static_pages#index'
@@ -22,5 +22,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :categories
   end
 end

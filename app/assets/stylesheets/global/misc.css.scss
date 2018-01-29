@@ -112,3 +112,8 @@ h1.with-border {
   -ms-flex-pack: center !important;
   justify-content: center !important;
 }
+
+.wrap {
+  margin-top: calc(35px + 1rem);
+  padding-top: 2rem;
+}

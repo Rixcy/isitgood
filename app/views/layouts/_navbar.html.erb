@@ -1,35 +1,33 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-  <div class="container">
-    <%= link_to 'IS IT GOOD', root_url, class: 'navbar-brand' %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
+  <%= link_to 'IS IT GOOD', root_url, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <span class="nav-link">Logged in as <%= current_user.forename %> <%= current_user.surname %></span>
+        </li>
+        <% if admin?(current_user) %>
           <li class="nav-item">
-            <span class="nav-link">Logged in as <%= current_user.forename %> <%= current_user.surname %></span>
-          </li>
-          <% if admin?(current_user) %>
-            <li class="nav-item">
-              <%= link_to 'Admin', admin_users_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-          <li class="nav-item">
-            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'log In', new_user_session_path, class: 'nav-link' %>
+            <%= link_to 'Admin', admin_users_path, class: 'nav-link' %>
           </li>
         <% end %>
-      </ul>
-    </div>
+        <li class="nav-item">
+          <%= link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'log In', new_user_session_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

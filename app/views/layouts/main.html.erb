@@ -1,7 +1,7 @@
 <% content_for :namespace do %>
   <%= render 'layouts/navbar' %>
 
-  <div style="margin-top: calc(65px + 2rem)">
+  <div class="wrap">
     <div class="container">
       <%= flash_messages unless flash.empty? %>
       <%= yield %>
